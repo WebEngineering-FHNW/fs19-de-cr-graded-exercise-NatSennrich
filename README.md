@@ -2,10 +2,13 @@
 
 ## Commit Proposal
 
-Matriculation Number: <to be filled by student>
+Matriculation Number: 17-548-397
 
 Project idea short description: 
-
+Platform for control of orders in restaurant
+Expectations: 1 page for create new orders or modify orders which have not been
+canceled yet(consumer is still in the restaurant) and 1 page with the day overview
+(all orders of one specified date).
 
 ## Project confirmation
 
