@@ -17,7 +17,7 @@
     <label class="col-md-4 control-label">Select Table</label>
 
     <div class="col-md-4">
-        <g:form controller="OrdersPanel" action="newOrder">
+        <g:form controller="restaurantOrder" action="newOrder">
             <select id="selectTable" name="table" class="form-control">
                 <g:each in="${1..10}" var="tableId">
                     <option value="${tableId}">Table ${tableId}</option>

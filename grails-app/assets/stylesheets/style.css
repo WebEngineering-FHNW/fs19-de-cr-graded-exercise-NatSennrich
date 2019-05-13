@@ -2,3 +2,15 @@
     width: 40px;
     height: 40px;
 }
+
+#itemIcons .ui-selecting {
+    border: 1px solid #ced4da;
+}
+
+#itemIcons {
+    list-style-type: none;
+}
+
+#itemIcons li {
+    float: left;
+}
