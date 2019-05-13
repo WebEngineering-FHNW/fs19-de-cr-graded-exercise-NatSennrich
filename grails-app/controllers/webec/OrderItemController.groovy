@@ -2,6 +2,6 @@ package webec
 
 class OrderItemController {
 
-    static scaffold = OrderItem
+    ///static scaffold = OrderItem
 
 }

@@ -17,4 +17,5 @@ class OrderItem {
         dish nullable: true, validator: {val, item -> if(item.itemTyp == "Food") val != null}
         beverage nullable: true, validator: {val, item -> if(item.itemTyp == "Beverage") val != null}
     }
+
 }

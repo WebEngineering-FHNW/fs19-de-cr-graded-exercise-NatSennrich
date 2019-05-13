@@ -14,7 +14,7 @@ class RestaurantOrder {
     static constraints = {
         orderNumber blank: false, unique: true
         tableNumber range: 1..12
-        status inList: ["open", "canceled", "annulled"]
+        status inList: ["open", "paid", "annulled"]
     }
 
 }
