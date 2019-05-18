@@ -4,7 +4,8 @@ class RestaurantOrder {
 
     Integer orderNumber
     Integer tableNumber
-    Date orderDate = new Date()
+    Date serviceStart = new Date()
+    Date serviceEnd = new Date()
     Double orderAmount
     String status
     User user

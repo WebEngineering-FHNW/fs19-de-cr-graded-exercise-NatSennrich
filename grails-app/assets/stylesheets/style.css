@@ -1,10 +1,18 @@
-.food-icon {
-    width: 40px;
-    height: 40px;
+/* Size of logo */
+.logo {
+    width: auto;
+    height: 100px;
 }
 
-#itemIcons .ui-selecting {
-    border: 1px solid #ced4da;
+/* Styling for icons while adding new item */
+.food-icon {
+    width: 60px;
+    height: 50px;
+}
+
+#itemIcons .ui-selected {
+    background-color: #ced4da;
+    border-radius: 0.25rem;
 }
 
 #itemIcons {
@@ -13,4 +21,46 @@
 
 #itemIcons li {
     float: left;
+    margin: 5px;
+}
+
+/* Styling for table representatives */
+
+#selectableTables .ui-selecting {
+    background: #28a710;
+}
+
+#selectableTables .ui-selected {
+    background: #28a745;
+    color: white;
+}
+
+#selectableTables, #openOrders {
+    list-style-type: none;
+    margin: 10px;
+    padding: 20px;
+}
+
+#selectableTables li {
+    margin: 20px 40px;
+    padding: 20px;
+    float: left;
+    width: 100px;
+    height: 100px;
+    font-size: 1em;
+    text-align: center;
+}
+
+li.ui-selectee:hover {
+    cursor: pointer;
+}
+
+.tableOccupied {
+    background: #db4800 !important;
+    color: white !important;
+}
+
+.currentTable {
+    background: #28a745 !important;
+    color: white !important;
 }

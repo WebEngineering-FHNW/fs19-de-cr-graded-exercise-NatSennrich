@@ -1,6 +1,6 @@
 package webec
 
-class BeverageItem {
+class BeverageProduct {
 
     String name
     String category

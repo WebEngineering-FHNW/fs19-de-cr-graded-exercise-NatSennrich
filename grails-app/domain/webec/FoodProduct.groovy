@@ -1,6 +1,6 @@
 package webec
 
-class FoodItem {
+class FoodProduct {
 
     String name
     String description

@@ -1,9 +1,9 @@
 package webec
 
-import grails.testing.web.controllers.ControllerUnitTest
+import grails.testing.gorm.DomainUnitTest
 import spock.lang.Specification
 
-class OrdersPanelControllerSpec extends Specification implements ControllerUnitTest<OrdersPanelController> {
+class FoodProductSpec extends Specification implements DomainUnitTest<FoodProduct> {
 
     def setup() {
     }

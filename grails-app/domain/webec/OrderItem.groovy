@@ -5,8 +5,8 @@ class OrderItem {
     String itemTyp
     Integer quantity
     Double amount
-    FoodItem dish
-    BeverageItem beverage
+    FoodProduct dish
+    BeverageProduct beverage
 
     static belongsTo = [restaurantOrder: RestaurantOrder]
 
@@ -14,8 +14,8 @@ class OrderItem {
         itemTyp inList: ["Food", "Beverage"]
         quantity min: 1
         amount min: 0D
-        dish nullable: true, validator: {val, item -> if(item.itemTyp == "Food") val != null}
-        beverage nullable: true, validator: {val, item -> if(item.itemTyp == "Beverage") val != null}
+        dish nullable: true, validator: { val, item -> if (item.itemTyp == "Food") val != null }
+        beverage nullable: true, validator: { val, item -> if (item.itemTyp == "Beverage") val != null }
     }
 
 }

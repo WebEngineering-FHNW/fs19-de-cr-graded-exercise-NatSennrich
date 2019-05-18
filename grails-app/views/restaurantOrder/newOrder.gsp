@@ -9,130 +9,186 @@
 <html>
 <head>
     <title>Create new Order</title>
-    <asset:stylesheet src="style.css"/>
 </head>
 
 <body>
-<form class="form-horizontal" style="width: 50%">
 
-        <!-- Form Name -->
-        <legend>Creating orders</legend>
+<g:applyLayout name="tableOverview">
+    <div class="container border col m-lg-5">
+        <h4 class="mt-lg-4">Create/edit order</h4>
 
-        <label>Order number: </label>
+        <label>Order number:</label>
         <label>${order.orderNumber}</label>
 
-        <div style="border-color: #0c5460; border-width: 2px">
-            <fieldset>
-            <legend>Add a new reservation item</legend>
-            <ul id="itemIcons">
-                <li value="1"><asset:image src="/newOrder/platter.png" class="food-icon"/></li>
-                <li value="2"><asset:image src="/newOrder/juice.png" class="food-icon"/></li>
-            </ul>
-            </fieldset>
+        <div class="container-fluid row">
+            <div class="my-auto">
+                Add a new reservation item
+            </div>
 
+            <div class="align-middle">
+                <ul id="itemIcons">
+                    <li value="1"><asset:image src="/newOrder/platter.png" class="food-icon img-thumbnail"/></li>
+                    <li value="2"><asset:image src="/newOrder/juice.png" class="food-icon img-thumbnail"/></li>
+                </ul>
+            </div>
         </div>
-</form>
+        <br><br>
 
-<div id="foodItemForm" class="" hidden="true">
-        <g:form controller="orderItem" action="saveFood">
-            <fieldset>
-            <legend>Create food item</legend><br>
-            <g:hiddenField name="order" value="${order.orderNumber}"/>
-            <div style="float: left">
-                <label>Select dish:</label><br>
-                <g:select name="dish" from="${dishes}" optionKey="id" optionValue="name"/>
-            </div>
-            <div style="float: left">
-                <label>Quantity:</label><br>
-                <g:field type="number" name="quantity" required="" value="${qty}"/>
-            </div>
-            <div>
-                <g:submitButton name="Save"></g:submitButton>
-            </div>
-            </fieldset>
-        </g:form>
-</div>
+        <div id="foodProductForm" class="d-none">
+            <g:form controller="orderItem" action="saveFood">
+                <h6>Create food item</h6>
 
-<div id="beverageItemForm" class="" hidden="true">
-        <g:form controller="orderItem" action="saveBeverage">
-            <fieldset>
-            <legend>Create beverage item</legend><br>
-            <g:hiddenField name="order" value="${order.orderNumber}"/>
-            <div style="float: left">
-                <label>Select beverage:</label><br>
-                <g:select name="beverage" from="${beverages}" optionKey="id" optionValue="name"/>
-            </div>
-            <div style="float: left">
-                <label>Quantity:</label><br>
-                <g:field type="number" name="quantity" required="" value="${qty}"/>
-            </div>
-            <div>
-                <g:submitButton name="Save"></g:submitButton>
-            </div>
-            </fieldset>
-        </g:form>
-</div>
+                <div class="row">
+                    <g:hiddenField name="order" value="${order.orderNumber}"/>
+                    <div class="form-group col-md-6">
+                        <label for="foodSelect">Select dish:</label>
+                        <g:select id="foodSelect" name="dish" class="form-control" from="${dishes}" optionKey="id"
+                                  optionValue="name"/>
+                    </div>
 
-<div>
-    <div>
-        <g:if test="${items.size() != 0}">
-            <h2>Current items:</h2>
+                    <div class="form-group col-md-6">
+                        <label for="foodQty">Quantity:</label><br>
 
-            <table class=''>
-                <tr>
-                    <th>Quantity</th>
-                    <th>Name</th>
-                    <th>Amount</th>
-                </tr>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <g:field type="number" id="foodQty" name="quantity" class="form-control" required=""
+                                         min="1"
+                                         value="${qty}"/>
+                            </div>
 
-                <g:findAll in="${items}" expr="it.dish != null">
+                            <div class="col-md-6">
+                                <g:submitButton name="Save" class="btn btn-default"></g:submitButton>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </g:form>
+        </div>
+
+        <div id="beverageProductForm" class="d-none">
+            <g:form controller="orderItem" action="saveBeverage">
+                <h6>Create beverage item</h6>
+
+                <div class="row">
+                    <g:hiddenField name="order" value="${order.orderNumber}"/>
+                    <div class="form-group col-md-6">
+                        <label for="beverageSelect">Select beverage:</label><br>
+                        <g:select id="beverageSelect" name="beverage" class="form-control" from="${beverages}"
+                                  optionKey="id"
+                                  optionValue="name"/>
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        <label for="beverageQty">Quantity:</label><br>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <g:field type="number" id="beverageQty" name="quantity" class="form-control" required=""
+                                         min="1"
+                                         value="${qty}"/>
+                            </div>
+
+                            <div class="col-md-6">
+                                <g:submitButton name="Save" class="btn btn-default"></g:submitButton>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </g:form>
+        </div>
+
+
+        <div>
+            <g:if test="${items.size() != 0}">
+                <h2>Current items:</h2>
+
+                <table class='table table-hover'>
                     <tr>
-                        <td>${it.quantity}</td>
-                        <td>${it.dish.name}</td>
-                        <td>${it.amount}</td>
+                        <th>Quantity</th>
+                        <th>Name</th>
+                        <th>Amount</th>
+                        <th></th>
                     </tr>
-                </g:findAll>
-                <g:findAll in="${items}" expr="it.beverage != null">
-                    <tr>
-                        <td>${it.quantity}</td>
-                        <td>${it.beverage.name}</td>
-                        <td>${it.amount}</td>
-                    </tr>
-                </g:findAll>
-            </table>
 
-            <h2>Total Amount: ${order.orderAmount}</h2>
-        </g:if>
+                    <g:findAll in="${items}" expr="it.dish != null">
+                        <tr>
+                            <td>${it.quantity}</td>
+                            <td>${it.dish.name}</td>
+                            <td>${it.amount}</td>
+                            <td>
+                                <g:form controller="orderItem">
+                                    <g:hiddenField name="order" value="${order.orderNumber}"/>
+                                    <g:hiddenField name="item" value="${it.id}"/>
+                                    <g:actionSubmit action="deleteItem" value="x" class="btn btn-danger fa fa-trash"/>
+                                </g:form>
+                            </td>
+                        </tr>
+                    </g:findAll>
+                    <g:findAll in="${items}" expr="it.beverage != null">
+                        <tr>
+                            <td>${it.quantity}</td>
+                            <td>${it.beverage.name}</td>
+                            <td>${it.amount}</td>
+                            <td>
+                                <g:form controller="orderItem">
+                                    <g:hiddenField name="order" value="${order.orderNumber}"/>
+                                    <g:hiddenField name="item" value="${it.id}"/>
+                                    <g:actionSubmit action="deleteItem" value="x" class="btn btn-danger fa fa-trash"/>
+                                </g:form>
+                            </td>
+                        </tr>
+                    </g:findAll>
+                </table>
+
+                <h2>Total Amount: ${order.orderAmount}</h2>
+            </g:if>
+        </div>
+
+        <div class="btn-toolbar justify-content-between mt-lg-5" role="toolbar" aria-label="Toolbar with button groups">
+            <div class="btn-group" role="group" aria-label="First group">
+                <g:form controller="OrderManager">
+                    <g:actionSubmit action="index" value="Homepage" class="btn btn-primary"/>
+                </g:form>
+            </div>
+
+            <div class="btn-group" role="group" aria-label="Second group">
+                <g:form controller="restaurantOrder">
+                    <g:hiddenField name="order" value="${order.orderNumber}"/>
+                    <g:actionSubmit action="delete" onclick="return confirm('Are you sure???')" value="Delete order"
+                                    class="btn btn-danger"/>
+                    <g:actionSubmit action="save" value="Pay order" class="btn btn-primary"/>
+                </g:form>
+            </div>
+        </div>
 
     </div>
-</div>
-</body>
-<asset:stylesheet src="/jquery-ui-1.12.1/jquery-ui.min.css"/>
-<asset:javascript src="/jquery-ui-1.12.1/external/jquery/jquery.js"/>
-<asset:javascript src="/jquery-ui-1.12.1/jquery-ui.min.js"/>
+</g:applyLayout>
 
-<script>
-    $( function () {
-        $('#itemIcons').selectable({
-            selected: function () {
-                console.log($('#itemIcons .ui-selected').val());
-                var value = $('#itemIcons .ui-selected').val();
-                if (value === 1) showFoodForm();
-                else showBeverageForm();
-            }
-        });
+
+<g:javascript>
+    $('#itemIcons').selectable({
+        stop: function () {
+            console.log($('#itemIcons .ui-selected').val());
+            var value = $('#itemIcons .ui-selected').val();
+            if (value == 1) showFoodForm();
+            else showBeverageForm();
+        }
     });
 
-
     function showFoodForm() {
-        $('#foodItemForm').show();
-        $('#beverageItemForm').hide();
+        console.log("theoretisch ja");
+        $('#foodProductForm').removeClass('d-none');
+        $('#beverageProductForm').addClass('d-none');
     }
 
     function showBeverageForm() {
-        $('#beverageItemForm').show();
-        $('#foodItemForm').hide();
+        console.log("bev");
+        $('#beverageProductForm').removeClass('d-none');
+        $('#foodProductForm').addClass('d-none');
     }
 
-</script>
+    $('#selectableTables li[value="'+${order.tableNumber}+'"]').addClass('currentTable');
+</g:javascript>
+
+</body>
 </html>
