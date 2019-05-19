@@ -1,18 +1,20 @@
 package webec
 
-import grails.testing.gorm.DomainUnitTest
+import grails.testing.gorm.DataTest
 import spock.lang.Specification
 
-class BeverageProductSpec extends Specification implements DomainUnitTest<BeverageProduct> {
+class BeverageProductSpec extends Specification implements DataTest {
 
-    def setup() {
+    void setupSpec() {
+        mockDomain BeverageProduct
     }
 
-    def cleanup() {
-    }
+    void "test basic create Beverage Product"() {
+        setup:
+        new BeverageProduct(name: "Coca Cola", category: "soda", container: "glass bottle", price: 25.00).save()
+        new BeverageProduct(name: "Rivella", category: "soda", container: "glass bottle", price: 25.00).save()
 
-    void "test something"() {
-        expect:"fix me"
-            true == false
+        expect:
+        BeverageProduct.count() == 2
     }
 }

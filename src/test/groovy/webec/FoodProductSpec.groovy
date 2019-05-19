@@ -5,14 +5,12 @@ import spock.lang.Specification
 
 class FoodProductSpec extends Specification implements DomainUnitTest<FoodProduct> {
 
-    def setup() {
-    }
+    void "test basic create FoodProduct"() {
+        setup:
+        new FoodProduct(name: "Parrillada", description: "Mixture of chicken, beef and pork",
+                category: "specialities", price: 140.00).save()
 
-    def cleanup() {
-    }
-
-    void "test something"() {
-        expect:"fix me"
-            true == false
+        expect:
+        FoodProduct.count() == 1
     }
 }
