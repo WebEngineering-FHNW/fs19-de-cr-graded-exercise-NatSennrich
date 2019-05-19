@@ -27,7 +27,10 @@
     <h4>Restaurant El Asador - Order's Manager</h4>
 
     <div class="collapse navbar-collapse">
-        <ul class="navbar-nav ml-auto">
+        <ul class="navbar-nav ml-auto mr-lg-4">
+            <li class="nav-item">
+                <a href="/OrderManager/index" class="nav-link">Home</a>
+            </li>
             <li class="nav-item">
                 <a href="/OrderManager/orderHistory?date=${new Date().format("dd.MM.yyy")}"
                    class="nav-link">Reservations overview</a>
@@ -38,8 +41,12 @@
             <li class="nav-item">
                 <a href="/foodProduct/foodInventory" class="nav-link">Food Inventory</a>
             </li>
+            <li class="nav-item nav-link">|</li>
         </ul>
-        <button type="button" class="btn btn-outline-secondary" onclick="">Log out</button>
+        <sec:ifLoggedIn>
+            <span class="mx-lg-2">User: <sec:username/></span>
+            <span class="btn btn-secondary"><g:link controller="logout" class="text-white nav-link">Log out</g:link></span>
+        </sec:ifLoggedIn>
     </div>
 
 </nav>

@@ -16,6 +16,7 @@ class RestaurantOrder {
         orderNumber blank: false, unique: true
         tableNumber range: 1..12
         status inList: ["open", "paid", "annulled"]
+        user nullable: false
     }
 
 }

@@ -33,7 +33,7 @@
                     <ul id="openOrders">
                         <g:each in="${openOrders}" var="order">
                             <li value="${order.tableNumber}"
-                                class="card card-body mt-lg-2">Table: ${order.tableNumber}, Current amount: ${order.orderAmount}</li>
+                                class="card card-body mt-lg-2">Table: ${order.tableNumber}, Current amount: ${order.orderAmount}, Created by: ${order.user.username}</li>
                         </g:each>
                     </ul>
                 </g:else>
@@ -48,7 +48,7 @@
                     <ul id="paidOrders">
                         <g:each in="${paidOrders}" var="order">
                             <li value="${order.tableNumber}"
-                                class="card card-body mt-lg-2">Table: ${order.tableNumber}, Total amount: ${order.orderAmount}</li>
+                                class="card card-body mt-lg-2">Table: ${order.tableNumber}, Total amount: ${order.orderAmount}, Created by: ${order.user.username}</li>
                         </g:each>
                     </ul>
                 </g:else>
@@ -63,7 +63,7 @@
                     <ul id="paidOrders">
                         <g:each in="${annulledOrders}" var="order">
                             <li value="${order.tableNumber}"
-                                class="card card-body mt-lg-2">Table: ${order.tableNumber}, Total amount: ${order.orderAmount}</li>
+                                class="card card-body mt-lg-2">Table: ${order.tableNumber}, Total amount: ${order.orderAmount}, Deleted by: ${order.user.username}</li>
                         </g:each>
                     </ul>
                 </g:else>

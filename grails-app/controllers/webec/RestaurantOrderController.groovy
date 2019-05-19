@@ -1,5 +1,9 @@
 package webec
 
+import grails.plugin.springsecurity.SpringSecurityService
+import grails.plugin.springsecurity.annotation.Secured
+
+@Secured(Role.USER)
 class RestaurantOrderController {
 
     def newOrder(int table) {
@@ -9,14 +13,15 @@ class RestaurantOrderController {
 
         if (resOrder == null) {
             def orderNumber = (RestaurantOrder.list()) ? RestaurantOrder.list().last().orderNumber + 1 : 1
+            def user = User.find(getAuthenticatedUser())
             resOrder = new RestaurantOrder(
                     orderNumber: orderNumber,
                     tableNumber: table,
                     status: "open",
-                    user: User.first(),
+                    user: user,
                     orderAmount: 0.0,
                     serviceStart: new Date(),
-                    serviceEnd: new Date()).save(flush: true)
+                    serviceEnd: new Date()).save(failOnError: true, flush: true)
         }
 
         def orderItems = OrderItem.list().findAll({ order -> order.restaurantOrder == resOrder })

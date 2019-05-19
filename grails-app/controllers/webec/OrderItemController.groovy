@@ -1,5 +1,8 @@
 package webec
 
+import grails.plugin.springsecurity.annotation.Secured
+
+@Secured(Role.USER)
 class OrderItemController {
 
     def deleteItem() {
