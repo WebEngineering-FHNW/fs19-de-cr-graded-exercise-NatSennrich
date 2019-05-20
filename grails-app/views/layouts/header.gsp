@@ -24,7 +24,7 @@
     <a class="navbar-brand" href="/orderManager/index"><asset:image src="/asador/asador-oficial.png"
                                                                     class="logo mx-lg-4 my-lg-2"
                                                                     alt="Asador Logo"/></a>
-    <h4>Restaurant El Asador - Order's Manager</h4>
+    <h4>Restaurant El Asador - Orders Manager</h4>
 
     <div class="collapse navbar-collapse">
         <ul class="navbar-nav ml-auto mr-lg-4">
