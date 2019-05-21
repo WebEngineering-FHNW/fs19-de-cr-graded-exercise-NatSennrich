@@ -3,45 +3,244 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <title>
         <title>Projektbeschreibung</title>
-    </title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <link rel="stylesheet" href="../../../../grails-app/assets/stylesheets/style.css">
-    <link rel="stylesheet" href="../../../../grails-app/assets/stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/style.css"/>
+    <link rel="stylesheet" href="/assets/bootstrap.min.css"/>
 </head>
 
 <body>
-
-<div id="content" role="main">
-    <section class="row colset-2-its">
-        <h1>Web Enginnering Projekt: Restaurant El Asador - Orders Manager</h1>
-
-        <p>
-            Restaurant El Asador - Orders Manager ist eine Grails basierte Webapplikation inspiriert vom Restaurant
-            meiner Mutter und hat das Ziel den Bestellungprozess im Betrieb zu vereinfachen, denn aktuell werden die
-            Bestellungen nur auf Papier geschrieben.
-            Was diese Webapplikation anbietet is:
-            1. Übersicht von verfügbaren Tischen im Restaurant
-            2. Eine Liste von offenen Bestellung
-            3. Ein Bereich für die Erfassung neue Bestellungen
-            4. Übersicht von allen Bestellungen für ein bestimmtes Datum
-            5. Eine Bestanaufnahme-Seite der Gerichten, sowie der Getränke
-            6. SpringSecurity Funktionalität
-        </p>
-
-        <div id="controllers" role="navigation">
-            <h2>Available Controllers:</h2>
-            <ul>
-                <g:each var="c" in="${grailsApplication.controllerClasses.sort { it.fullName }}">
-                    <li class="controller">
-                        <g:link controller="${c.logicalPropertyName}">${c.fullName}</g:link>
-                    </li>
-                </g:each>
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" id="mainNav">
+    <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="">Projektbeschreibung</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="#intro">Einführung</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="#manual">Anleitung</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="#views">Views</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="#domain">Domain Classes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="#controllers">Controllers</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="#spring">Benutzerverwaltung</a>
+                </li>
             </ul>
         </div>
-    </section>
+    </div>
+</nav>
+
+<header class="bg-primary text-white">
+    <div class="container text-center">
+        <h1>Web Engineering Projekt:<br>Restaurant El Asador - Orders Manager</h1>
+        <p class="lead">Diese Seite gilt als Beschreibung meines Projektes</p>
+    </div>
+</header>
+
+<section id="intro">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <h2>Einführung</h2>
+                <p class="lead">Restaurant El Asador - Orders Manager ist eine Grails basierte Webapplikation inspiriert vom Restaurant
+                    meiner Mutter und hat das Ziel den Bestellungprozess im Betrieb zu vereinfachen, denn aktuell werden die
+                    Bestellungen nur auf Papier geschrieben.<br>
+                    Was diese Webapplikation anbietet is:</p>
+                <ul>
+                    <li>Übersicht von verfügbaren Tischen im Restaurant</li>
+                    <li>Eine Liste von offenen Bestellung</li>
+                    <li>Ein Bereich für die Erfassung neue Bestellungen</li>
+                    <li>Übersicht von allen Bestellungen für ein bestimmtes Datum</li>
+                    <li>Eine Bestanaufnahme-Seite der Gerichten, sowie der Getränke</li>
+                    <li>SpringSecurity Funktionalität</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="manual" class="bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <h2>Anleitung</h2>
+                <p class="lead">Anleitung für die wichtigsten Funktionalitäten</p>
+
+                <div>
+                    <h6>Sich einlogen</h6>
+                    Um sich einzulogen verwenden klicken Sie auf den Knop "Zur Applikation hier klicken" am Ende dieser Seiten. Dann geben Sie eine dieser Daten an:
+                    <table class="table">
+                        <tr>
+                            <th>Username</th>
+                            <th>Password</th>
+                        </tr>
+                        <tr>
+                            <td>user</td>
+                            <td>user</td>
+                        </tr>
+                        <tr>
+                            <td>admin</td>
+                            <td>admin</td>
+                        </tr>
+                    </table>
+                </div>
+                <div>
+                    <h6>Neue Bestellung erstellen</h6>
+                    Um eine neue Bestellung zu erstellen müssen Sie
+                    <ol>
+                        <li>Auf einen freien Tisch klicken (nicht rot)</li>
+                        <li>Ein Produkt hinzufügen: klick auf dem Essen oder Getränk Icon</li>
+                        <li>Produkt aus der Liste auswählen</li>
+                        <li>Anzahl angeben</li>
+                        <li>Auf Knopf "Save" klicken</li>
+                        <li>Die Bestellung kann jetzt verlassen, bezahlt oder sogar gelöscht werden (Klick auf dem gewünschten Knopf</li>
+                    </ol>
+                </div>
+                <div>
+                    <h6>Offene Bestellung bearbeiten</h6>
+                    Auf der Index-Seite klick auf die gewünschte Bestellung aus der rechten Liste oder direkt auf dem Tisch mit der Bestellung.
+                    Dann Änderungen vornehmen.
+                </div><br>
+                <div>
+                    <h6>Ein neues Produkt zur Bestandaufnahme hinzufügen</h6>
+                    <ol>
+                        <li>In der Navigation, auf BeverageInventory oder FoodInventory klicken</li>
+                        <li>Daten vom neuen Produkt ins Formular eintragen</li>
+                        <li>Auf save klicken</li>
+                    </ol>
+                </div>
+                <div>
+                    <h6>Sich abmelden</h6>
+                    Um sich aus der Applikation abzumelden, einfach auf dem "Logout" Knopf klicken.
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="views">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <h2>Verwendete Layouts</h2>
+                <p class="lead">Um alle Seite der Applikation einheitlich zu gestalten wurden zwei Layouts verwendet: Header und Table Overview</p>
+
+                <div class="card card-body my-2">
+                    <h6>Header Layout</h6>
+                    Das Header Layout wird in allen Seiten verwendet und beinhaltet die basis HTML Struktur für alle Seite, sowie die Importierung von
+                    CSS Stylesheets und JavaScripts. Das Logo des Kunden (Restaurant El Asador in diesem Fall) und die Navigation sind in diesem Layout vorhanden.
+                </div>
+                <div class="card card-body my-2">
+                    <h6>TableOverview Layout</h6>
+                    Dieses Layout wird in den Views orderManager/index und orderRestaurant/newOrder und es ist verantwortlich für die Darstellung der verfügbaren
+                    Tischen im Restaurant. Die dargestellten Tischen sind klickbar und lösen die Aktion "neue Bestellung erstellen" falls der Tisch frei ist oder
+                    "Bestellung bearbeiten" falls dieser Tisch eine offene Bestellung hat. Dieses Layout verwendet zudem das Header Layout.
+                </div>
+                <div class="card card-body my-2">
+                    <h6>index</h6>
+                    Die erste Seite nach dem Login. Diese Seite verwenden die Layouts Header und TableOverview. Auf dieser Seite bekommt man einen Übersicht von den offenen Bestellungen.
+                    <img src="">
+                </div>
+                <div class="card card-body my-2">
+                    <h6>newOrder</h6>
+                    Die Seite auf der man eine Neue Bestellung und OrderItems erstellen kann, oder eine offene Bestellung bezahlen oder löschen.
+                </div>
+                <div class="card card-body my-2">
+                    <h6>orderHistory</h6>
+                    Diese Seite bietet eien Übersicht von allen Bestellungen mit den drei verschienen Status sowie einen DatePicker, damit man ein anderes datum auswählen kann.
+                </div>
+                <div class="card card-body my-2">
+                    <h6>beverageInventory und foodInventory</h6>
+                    Auflistung von allen verfügbaren Getränk- bzw. Essenprodukte. Sowie ein Formular für die Erstellung neue Produkte.
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="domain" class="bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <h2>Domain Classes</h2>
+                <p class="lead">Damit die Webapplikation richtig funktioniert wurden folgenden Domain Classes implementiert:</p>
+                <h6>BeverageProduct</h6>
+                <p class="lead">Diese Klasse dient für die Instanzierung eindeutiger Getränke. Jede Instanz diese Klasse hat folgende Eigenschaften: Name, Kategorie, Behälter, Preis und das Datum, wann sie zuletzt gespeichert wurde.</p>
+                <h6>FoodProduct</h6>
+                <p class="lead">Diese Klasse dient für die Instanzierung eindeutiger Gerichte. Jede Instanz diese Klasse hat folgende Eigenschaften: Name, Beschreibung, Kategorie, Preis und das Datum, wann sie zuletzt gespeichert wurde.</p>
+                <h6>OrderItem</h6>
+                <p class="lead">Für die Bestellungen werden Instanzen dieser Klasse erzeugt. Man kann ein Getränk oder ein Gerich einem OrderItem zuordnen und dieser wird mit Anzahl und Betrag gespeichert.</p>
+                <h6>RestaurantOrder</h6>
+                <p class="lead">Jede Bestellung ist eine Instanz dieser Klasse. Eine Bestellung besteht aus einen oder mehreren OderItem, eine Tischnummer, Bestellungsnummer, User, Start- und Enddatum und ein Status (Offen, Bezahlt oder Storniert).</p>
+                <h6>User, Role und UserRole</h6>
+                <p class="lead">Diese Klasse sind notwendig für die User Verwaltung. Mehr Info in Sektion User Verwaltung.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="controllers">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <h2>Controllers</h2>
+                <p class="lead">Beschreibung von angewendeten Controllers</p>
+                <h6>BeverageProductController</h6>
+                <p class="lead">Zuständig für die Verwaltung von Getränken. Die Methoden dieses Controllers erlauben:</p>
+                <ul class="ml-auto">
+                    <li>Erstellung eine Liste von verfügbaren Getränke</li>
+                    <li>Erstellung neue Getränke</li>
+                    <li>Bearbeiten bestehende Getränke</li>
+                    <li>Löschen von Getränke</li>
+                </ul>
+                <h6>FoodProductController</h6>
+                <p class="lead">Die gleiche Funktionen wie der BeverageProductController.</p>
+                <h6>OrderItemController</h6>
+                <p class="lead">Beim Erstellen einer Bestellung wird diesen Controller verwenden, um neue OrderItems zu erstellen oder bereits erstellte zu löschen.</p>
+                <h6>RestaurantOrderController</h6>
+                <p class="lead">Dieser Controller ist für die Erstellung von Bestellungen zuständig, sowie vom Löschen. Diesen Controller wird bei jedem Klick auf einer offenen Bestellung oder einen freien Tisch aufgerufen.</p>
+                <h6>OrderManagerController</h6>
+                <p class="lead">Dieser Controller wird nach dem Login aufgerufen und erstellt eine Liste von offenen Bestellungen. Dieser Controller wird auch für die Auflistung aller Bestellungen für ein bestimmtes Datum verwendet. Defaultmässig wird den aktuellen Tag übergegeben.</p>
+                <h6>UserController</h6>
+                <p class="lead">Verwendet für die Verwaltung von Benützer.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="spring" class="bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <h2>Benutzerverwaltung</h2>
+                <p class="lead">Für die Benutzerverwaltung wurde das Plugin SpringSecurityCore verwendet.</p>
+                <p class="lead">Die Klasse User verwaltet die Benutzer, die Zugriff auf die Applikation haben dürfen.
+                    Die Klasse Role kontrolliert die Art von Zugriff, die ein Benutzer haben darf. Aktuell sind die Role user und admin vorhande, admin kann alles machen was user kann, aber nicht umgekehrt.
+                UserRoler ist zuständig für die Zuweisung von Roles für die Benutzer.</p>
+                <p class="lead">WICHTIG: Nur Admin darf neue Benutzer erstellen, allerdings ist dieser Controller bzw. View noch nicht implementiert.</p>
+                </div>
+        </div>
+    </div>
+</section>
+
+<div class="container">
+    <div class="row">
+        <button class="btn btn-primary btn-block my-lg-5"><a href="/orderManager/index" class="text-white nav-link"/>Zur Applikation hier klicken</button>
+    </div>
 </div>
+
 
 </body>
 </html>

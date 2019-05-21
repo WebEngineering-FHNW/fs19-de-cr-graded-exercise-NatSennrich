@@ -78,3 +78,13 @@ li.ui-selectee:hover {
     padding: 15px;
     margin: auto;
 }
+
+/* Styling for static index.html */
+
+header {
+    padding: 156px 0 100px;
+}
+
+section {
+    padding: 150px 0;
+}

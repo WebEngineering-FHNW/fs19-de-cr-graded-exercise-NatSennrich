@@ -26,10 +26,14 @@ class BootStrap {
 
         BeverageProduct c = new BeverageProduct(name: "Victoria", category: "beer", container: "glass bottle", price: 25.00).save()
 
-        RestaurantOrder ro1 = new RestaurantOrder(orderNumber: 1, tableNumber: 1, status: "open", user: user, orderAmount: 14.8, serviceStart: new Date(), serviceEnd: new Date()).save()
+        RestaurantOrder ro1 = new RestaurantOrder(orderNumber: 1, tableNumber: 1, status: "paid", user: user, orderAmount: 155.0, serviceStart: new Date() - 1, serviceEnd: new Date() -1).save()
+        RestaurantOrder ro2 = new RestaurantOrder(orderNumber: 2, tableNumber: 3, status: "open", user: user, orderAmount: 30.0, serviceStart: new Date(), serviceEnd: new Date()).save()
 
-        OrderItem oi1 = new OrderItem(ItemTyp: "Food", quantity: 1, amount: 12.4, dish: f, restaurantOrder: ro1).save()
-        OrderItem oi2 = new OrderItem(itemTyp: "Beverage", quantity: 1, amount: 2.4, beverage: b, restaurantOrder: ro1).save()
+
+        OrderItem oi1 = new OrderItem(ItemTyp: "Food", quantity: 1, amount: 140.0, dish: f, restaurantOrder: ro1).save()
+        OrderItem oi2 = new OrderItem(itemTyp: "Beverage", quantity: 1, amount: 15.0, beverage: b, restaurantOrder: ro1).save()
+        OrderItem oi3 = new OrderItem(itemTyp: "Beverage", quantity: 2, amount: 30.0, beverage: b, restaurantOrder: ro2).save()
+
 
     }
     def destroy = {

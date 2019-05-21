@@ -4,14 +4,6 @@
   Date: 18.05.2019
   Time: 14:42
 --%>
-
-<%@ page contentType="text/html;charset=UTF-8" %>
-<html>
-<head>
-    <title>Food Inventory</title>
-</head>
-
-<body>
 <g:applyLayout name="header">
     <div class="container p-lg-5">
         <h4 class="mb-lg-5">Food Product Inventory</h4>
@@ -82,5 +74,3 @@
         </table>
     </div>
 </g:applyLayout>
-</body>
-</html>

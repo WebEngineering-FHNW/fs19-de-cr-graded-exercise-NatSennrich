@@ -13,7 +13,6 @@
     <asset:stylesheet src="bootstrap.min.css"/>
     <asset:stylesheet src="style.css"/>
     <asset:stylesheet src="/jquery-ui-1.12.1/jquery-ui.min.css"/>
-
     <g:layoutHead/>
 </head>
 
@@ -40,19 +39,25 @@
             <li class="nav-item">
                 <a href="/foodProduct/foodInventory" class="nav-link">Food Inventory</a>
             </li>
+            <li class="nav-item">
+                <a href="/../index.html" class="nav-link">Project description</a>
+            </li>
             <li class="nav-item nav-link">|</li>
         </ul>
         <sec:ifLoggedIn>
             <span class="mx-lg-2">User: <sec:username/></span>
-            <span class="btn btn-secondary"><g:link controller="logout" class="text-white nav-link">Log out</g:link></span>
+            <span class="btn btn-secondary"><g:link controller="logout"
+                                                    class="text-white nav-link">Log out</g:link></span>
         </sec:ifLoggedIn>
     </div>
 
 </nav>
+<g:layoutBody/>
 
 <asset:javascript src="/jquery-ui-1.12.1/external/jquery/jquery.js"/>
 <asset:javascript src="/jquery-ui-1.12.1/jquery-ui.min.js"/>
+<g:pageProperty name="page.tableOverviewScript"/>
+<g:pageProperty name="page.scriptsInHeaderLayout"/>
 
-<g:layoutBody/>
 </body>
 </html>

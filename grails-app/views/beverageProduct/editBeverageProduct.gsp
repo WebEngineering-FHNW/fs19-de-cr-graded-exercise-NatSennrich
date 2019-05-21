@@ -4,14 +4,6 @@
   Date: 18.05.2019
   Time: 20:00
 --%>
-
-<%@ page contentType="text/html;charset=UTF-8" %>
-<html>
-<head>
-    <title>Edit Beverage Product</title>
-</head>
-
-<body>
 <g:applyLayout name="header">
 
     <div class="container p-lg-5">
@@ -59,10 +51,10 @@
         </g:form>
 
     </div>
+    <content tag="scriptsInHeaderLayout">
+        <g:javascript>
+            $('#category${beverageProduct.id}').val("${beverageProduct.category}");
+            $('#container${beverageProduct.id}').val("${beverageProduct.container}");
+        </g:javascript>
+    </content>
 </g:applyLayout>
-<g:javascript>
-$('#category${beverageProduct.id}').val("${beverageProduct.category}");
-$('#container${beverageProduct.id}').val("${beverageProduct.container}");
-</g:javascript>
-</body>
-</html>

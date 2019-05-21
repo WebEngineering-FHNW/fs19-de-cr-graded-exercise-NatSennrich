@@ -4,15 +4,12 @@
   Date: 22.04.2019
   Time: 12:51
 --%>
-
-<%@ page contentType="text/html;charset=UTF-8" %>
-<html>
-<head>
-    <title>Create new Order</title>
-</head>
-
-<body>
-
+<%--
+  Created by IntelliJ IDEA.
+  User: Norberto Sennrich
+  Date: 22.04.2019
+  Time: 12:51
+--%>
 <g:applyLayout name="tableOverview">
     <div class="container border col m-lg-5">
         <h4 class="mt-lg-4">Create/edit order</h4>
@@ -162,33 +159,32 @@
         </div>
 
     </div>
+
+    <content tag="otherScripts">
+        <g:javascript>
+            $('#itemIcons').selectable({
+                stop: function () {
+                    console.log($('#itemIcons .ui-selected').val());
+                    var value = $('#itemIcons .ui-selected').val();
+                    if (value == 1) showFoodForm();
+                    else showBeverageForm();
+                }
+            });
+
+            function showFoodForm() {
+                console.log("theoretisch ja");
+                $('#foodProductForm').removeClass('d-none');
+                $('#beverageProductForm').addClass('d-none');
+            }
+
+            function showBeverageForm() {
+                console.log("bev");
+                $('#beverageProductForm').removeClass('d-none');
+                $('#foodProductForm').addClass('d-none');
+            }
+
+            $('#selectableTables li[value="'+${order.tableNumber}+'"]').addClass('currentTable');
+        </g:javascript>
+    </content>
+
 </g:applyLayout>
-
-
-<g:javascript>
-    $('#itemIcons').selectable({
-        stop: function () {
-            console.log($('#itemIcons .ui-selected').val());
-            var value = $('#itemIcons .ui-selected').val();
-            if (value == 1) showFoodForm();
-            else showBeverageForm();
-        }
-    });
-
-    function showFoodForm() {
-        console.log("theoretisch ja");
-        $('#foodProductForm').removeClass('d-none');
-        $('#beverageProductForm').addClass('d-none');
-    }
-
-    function showBeverageForm() {
-        console.log("bev");
-        $('#beverageProductForm').removeClass('d-none');
-        $('#foodProductForm').addClass('d-none');
-    }
-
-    $('#selectableTables li[value="'+${order.tableNumber}+'"]').addClass('currentTable');
-</g:javascript>
-
-</body>
-</html>

@@ -4,14 +4,6 @@
   Date: 17.05.2019
   Time: 17:14
 --%>
-
-<%@ page contentType="text/html;charset=UTF-8" %>
-<html>
-<head>
-    <title>Order's history</title>
-</head>
-
-<body>
 <g:applyLayout name="header">
     <div class="container-fluid">
         <h4 class="mt-lg-4">Order's history for ${date}</h4>
@@ -70,16 +62,14 @@
             </div>
         </div>
     </div>
+    <content tag="scriptsInHeaderLayout">
+        <g:javascript>
+            $('#date').datepicker({
+                dateFormat: "dd.mm.yy",
+                onSelect: function (date) {
+                    location.href = "orderHistory?date=" + date;
+                }
+            });
+        </g:javascript>
+    </content>
 </g:applyLayout>
-
-<g:javascript>
-    $('#date').datepicker({
-        dateFormat: "dd.mm.yy",
-        onSelect: function (date) {
-            location.href = "orderHistory?date=" + date;
-        }
-    });
-</g:javascript>
-
-</body>
-</html>

@@ -4,16 +4,7 @@
   Date: 18.05.2019
   Time: 16:21
 --%>
-
-<%@ page contentType="text/html;charset=UTF-8" %>
-<html>
-<head>
-    <title>Edit Food Product</title>
-</head>
-
-<body>
 <g:applyLayout name="header">
-
     <div class="container p-lg-5">
         <h4>Edit Food Product</h4>
         <g:form controller="foodProduct">
@@ -55,10 +46,9 @@
         </g:form>
 
     </div>
+    <content tag="scriptsInHeaderLayout">
+        <g:javascript>
+            $('#category${foodProduct.id}').val("${foodProduct.category}");
+        </g:javascript>
+    </content>
 </g:applyLayout>
-<g:javascript>
-$('#category${foodProduct.id}').val("${foodProduct.category}");
-</g:javascript>
-
-</body>
-</html>
