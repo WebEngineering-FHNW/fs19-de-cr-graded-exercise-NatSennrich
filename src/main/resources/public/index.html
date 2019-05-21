@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>
+        <title>Projektbeschreibung</title>
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="../../../../grails-app/assets/stylesheets/style.css">
+    <link rel="stylesheet" href="../../../../grails-app/assets/stylesheets/bootstrap.min.css">
+</head>
+
+<body>
+
+<div id="content" role="main">
+    <section class="row colset-2-its">
+        <h1>Web Enginnering Projekt: Restaurant El Asador - Orders Manager</h1>
+
+        <p>
+            Restaurant El Asador - Orders Manager ist eine Grails basierte Webapplikation inspiriert vom Restaurant
+            meiner Mutter und hat das Ziel den Bestellungprozess im Betrieb zu vereinfachen, denn aktuell werden die
+            Bestellungen nur auf Papier geschrieben.
+            Was diese Webapplikation anbietet is:
+            1. Übersicht von verfügbaren Tischen im Restaurant
+            2. Eine Liste von offenen Bestellung
+            3. Ein Bereich für die Erfassung neue Bestellungen
+            4. Übersicht von allen Bestellungen für ein bestimmtes Datum
+            5. Eine Bestanaufnahme-Seite der Gerichten, sowie der Getränke
+            6. SpringSecurity Funktionalität
+        </p>
+
+        <div id="controllers" role="navigation">
+            <h2>Available Controllers:</h2>
+            <ul>
+                <g:each var="c" in="${grailsApplication.controllerClasses.sort { it.fullName }}">
+                    <li class="controller">
+                        <g:link controller="${c.logicalPropertyName}">${c.fullName}</g:link>
+                    </li>
+                </g:each>
+            </ul>
+        </div>
+    </section>
+</div>
+
+</body>
+</html>

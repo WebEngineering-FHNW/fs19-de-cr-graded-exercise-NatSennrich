@@ -8,9 +8,8 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
-    <title>Table Overview</title>
-
-    %{--    <asset:stylesheet src="application.css"/>--}%
+    <title>Orders Manager</title>
+    <asset:link rel="icon" href="asador/asador-favicon.ico" type="image/x-ico"/>
     <asset:stylesheet src="bootstrap.min.css"/>
     <asset:stylesheet src="style.css"/>
     <asset:stylesheet src="/jquery-ui-1.12.1/jquery-ui.min.css"/>
@@ -24,7 +23,7 @@
     <a class="navbar-brand" href="/orderManager/index"><asset:image src="/asador/asador-oficial.png"
                                                                     class="logo mx-lg-4 my-lg-2"
                                                                     alt="Asador Logo"/></a>
-    <h4>Restaurant El Asador - Order's Manager</h4>
+    <h4>Restaurant El Asador - Orders Manager</h4>
 
     <div class="collapse navbar-collapse">
         <ul class="navbar-nav ml-auto mr-lg-4">

@@ -4,6 +4,11 @@
     height: 100px;
 }
 
+.logoBig {
+    width: auto;
+    height: 200px;
+}
+
 /* Styling for icons while adding new item */
 .food-icon {
     width: 60px;
@@ -63,4 +68,13 @@ li.ui-selectee:hover {
 .currentTable {
     background: #28a745 !important;
     color: white !important;
+}
+
+/* Styling for login page */
+
+.form-signin {
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: auto;
 }
