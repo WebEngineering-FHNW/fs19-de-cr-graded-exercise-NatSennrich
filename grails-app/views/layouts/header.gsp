@@ -8,9 +8,8 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
-    <title>Table Overview</title>
-
-    %{--    <asset:stylesheet src="application.css"/>--}%
+    <title>Orders Manager</title>
+    <asset:link rel="icon" href="asador/asador-favicon.ico" type="image/x-ico"/>
     <asset:stylesheet src="bootstrap.min.css"/>
     <asset:stylesheet src="style.css"/>
     <asset:stylesheet src="/jquery-ui-1.12.1/jquery-ui.min.css"/>
