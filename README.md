@@ -21,7 +21,8 @@ How to start the project: (if other than `grailsw run-app`)
 How to test the project:  (if other than `grailsw test-app`)
 
 Hand-written, static HTML 
-project description: is located at `src/main/resources/public/index.html`
+project description: is located at `src/main/resources/public/index.html`. Basically, could be reached at http://localhost:8010/index.html
+when the application has started.
 
 External contributions:
 
@@ -29,7 +30,30 @@ Other comments:
 
 I'm particular proud of:
 
-
 ## Project grading 
 
-< to be filled by lecturer>
+Very complete project description found at http://localhost:8010/index.html (I had to start the application).
+It looks good and contains some _semantic_ elements. Unfortunately, it is invalid:
+
+![HTML validation report](html_validation.png "HTML validation report")
+
+Application runs without any problems. Default server port changed to `8010`.
+
+#### Features
+
+* **Spring Security**
+* 4 + 3 (security based) domain models
+* Navigation, input validation
+
+#### Engineering
+
+* Good commit log
+* Some unit tests (no integration tests) are provided
+* All other aspects are fine
+
+Overall this is an useful application. And you did it on your own, in a quite short period of time.
+There is room for improvement. By spending more time on it, you could definitely make something ready for production.
+
+Congratulations!
+
+Grade: **5.9**
